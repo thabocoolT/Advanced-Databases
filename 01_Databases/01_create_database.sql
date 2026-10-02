@@ -1,0 +1,5 @@
+-- CMPG321 Data Alchemists
+-- Database: cmpg321_data_alchemists
+-- DBMS: PostgreSQL
+-- Group: 36
+-- Purpose: Driver Earnings, Platform Commission & Payout Optimization
