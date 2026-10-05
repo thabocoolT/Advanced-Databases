@@ -30,3 +30,16 @@ RQ3 - Ride category
 RQ4 - Trip conditions
 RQ5 - City + category
 RQ6 - Estimated net hourly earnings
+
+Everyone must follow these rules:
+
+1. Use the existing database structure.
+2. Do not rename tables or columns.
+3. Do not create alternative versions of the database.
+4. Work on your assigned RQs.
+5. Save SQL in the correct 02_SQL_Queries file.
+6. Explain important results/findings.
+7. Commit your work regularly.
+8. Use a branch for your work.
+9. Create a Pull Request when your work is ready.
+10. Don't merge your own PR into main; I'll review and merge it.
