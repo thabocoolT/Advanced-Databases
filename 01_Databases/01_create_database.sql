@@ -1,5 +1,19 @@
--- CMPG321 Data Alchemists
+-- =========================================================
+-- CMPG321 DATA ALCHEMISTS
 -- Database: cmpg321_data_alchemists
 -- DBMS: PostgreSQL
 -- Group: 36
--- Purpose: Driver Earnings, Platform Commission & Payout Optimization
+--
+-- IMPORTANT:
+-- This project uses the PostgreSQL backup file as the
+-- official method for distributing the master database.
+--
+-- Backup:
+-- cmpg321_data_alchemists_initial.backup
+--
+-- To restore the database:
+-- 1. Create an empty database named cmpg321_data_alchemists
+-- 2. Right-click the database in pgAdmin 4
+-- 3. Select Restore...
+-- 4. Select cmpg321_data_alchemists_initial.backup
+-- =========================================================

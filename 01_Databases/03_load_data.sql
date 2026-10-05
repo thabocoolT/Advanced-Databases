@@ -1,0 +1,20 @@
+-- =========================================================
+-- CMPG321 DATA ALCHEMISTS - DATA LOADING
+-- =========================================================
+--
+-- The master database is distributed using:
+--
+-- cmpg321_data_alchemists_initial.backup
+--
+-- Group members should restore the backup in pgAdmin 4
+-- instead of manually importing the CSV files.
+--
+-- The CSV datasets are retained in:
+--
+-- 07_Dataset/
+--
+-- These CSV files are the original source datasets and
+-- may be used for analysis, verification, or rebuilding
+-- the database if required.
+--
+-- =========================================================
