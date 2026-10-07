@@ -66,3 +66,7 @@ Overall, the results indicate that Standard performs slightly better when consid
 In conclusion, the results show that the Standard (UberX/Bolt) category provides the highest average driver payout and the highest number of completed trips. However, the differences between driver payouts and payout-to-fare percentages across all four ride categories are relatively small. Therefore, the analysis suggests that ride category has only a limited to small effect on driver payout, with Standard showing a slight advantage in overall driver earnings and trip volume.
 
 ## Visualization
+
+[View Excel Results](RQ3_RESULTS_1.xlsx)
+
+[View Excel Results](RQ3_RESULTS_2.xlsx)
