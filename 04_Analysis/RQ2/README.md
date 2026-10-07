@@ -22,7 +22,7 @@ See 02_SQL_Queries/RQ2.sql.
 
 The results show a clear inverse relationship between the commission percentage charged by the platform and the proportion of the fare the driver retains. Drivers on the 20% commission tier (Bolt) retained approximately X% of their commissionable fare, drivers on the 22% tier (Dual-Platform) retained around Y%, and drivers on the 25% tier (Uber) retained roughly Z%. The gap between the highest and lowest tier is approximately N percentage points, meaning that for every R100 of commissionable fare earned, the highest-commission drivers keep about R(N) less than the lowest-commission drivers.
 
-The retention_rank column confirms this ordering, and the diff_vs_overall_avg column shows how far each tier sits from the pooled average. Notably, the difference in retention is almost exactly equal to the difference in commission percentage — which tells us the platform applies its commission cleanly to the base fare and does not compound it via surge multipliers or other hidden deductions.
+The retention_rank column confirms this ordering, and the diff_vs_overall_avg column shows how far each tier sits from the pooled average. Notably, the difference in retention is almost exactly equal to the difference in commission percentage, which tells us the platform applies its commission cleanly to the base fare and does not compound it via surge multipliers or other hidden deductions.
 
 The avg_tip column is also worth noting: tips add to driver payout but are not used as a commission base, so their presence raises retention on a total fare basis without changing retention on a commissionable fare basis. This validates the Phase 1 finding.
 
