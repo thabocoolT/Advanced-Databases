@@ -10,7 +10,7 @@ This question investigates the financial effect of the platform's commission str
 
 ## SQL Query
 
-See `02_SQL_Queries/RQ1.sql`.
+See 02_SQL_Queries/RQ2.sql.
 
 "What this query demonstrates (rubric keywords): multi-table INNER JOIN (three tables), CTE (WITH), aggregation (COUNT, AVG), calculated fields (retention ratios), window function (RANK() OVER), correlated subquery (comparison against overall average), NULLIF guard against division by zero"
 
