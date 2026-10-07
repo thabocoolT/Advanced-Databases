@@ -61,7 +61,7 @@ Another important observation was that the average total fare was relatively sim
 
 Overall, the results indicate that Standard performs slightly better when considering average driver payout and trip volume, while Budget performs slightly better when considering the weighted payout-to-fare percentage. But the differences between the two is small and it does not indicate any major financial advantage of one category over the others.
 
-## Conclusion and implications
+## Conclusion
 
 In conclusion, the results show that the Standard (UberX/Bolt) category provides the highest average driver payout and the highest number of completed trips. However, the differences between driver payouts and payout-to-fare percentages across all four ride categories are relatively small. Therefore, the analysis suggests that ride category has only a limited to small effect on driver payout, with Standard showing a slight advantage in overall driver earnings and trip volume.
 
