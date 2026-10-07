@@ -3,7 +3,7 @@
 ## Research Question
 
 Which ride category provides drivers with the highest average payout and the
-most favourable payout to fare ratio?
+most favorable payout to fare ratio?
 
 ## Purpose and method
 
@@ -33,7 +33,7 @@ It includes:
    average fare, both payout to fare measures, average commission, distance,
    and duration. Window `RANK()` functions rank categories by average payout,
    average trip ratio, and weighted ratio.
-2. A `HAVING` clause with a scalar subquery to identify categories whose mean
+2. A `HAVING` clause with a scalar sub-query to identify categories whose mean
    trip payout is above the overall completed-trip average.
 
 The queries use `NULLIF` to guard division, and apply the completed-trip and
