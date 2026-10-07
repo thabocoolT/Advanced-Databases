@@ -67,6 +67,6 @@ In conclusion, the results show that the Standard (UberX/Bolt) category provides
 
 ## Visualization
 
-[View Excel Results](04_Analysis/RQ3/RQ3_SQL_RESULTS_1.xlsx)
+[View Excel Results](RQ3_SQL_RESULT_1.xlsx)
 
-[View Excel Results](04_Analysis/RQ3/RQ3_SQL_RESULTS_2.xlsx)
+[View Excel Results](RQ3_SQL_RESULTS_2.xlsx)
