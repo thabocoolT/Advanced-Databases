@@ -10,7 +10,7 @@ This question investigates which operational trip conditions have the strongest 
 
 ## SQL Query
 
-See `02_SQL_Queries/RQ1.sql`.
+See `02_SQL_Queries/RQ4.sql`.
 
 ## Results
 
