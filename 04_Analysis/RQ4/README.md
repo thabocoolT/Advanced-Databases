@@ -55,18 +55,28 @@ The analysis shows that **trip distance, duration and surge pricing are importan
 4A — Peak vs Off-Peak
 <img width="555" height="171" alt="graph_visualiser-1791496895274" src="https://github.com/user-attachments/assets/5a0a5def-73a4-47df-ba29-0f10f1147cb0" />
 
+
+
 4B — Surge Pricing
 <img width="555" height="251" alt="graph_visualiser-1791497092563" src="https://github.com/user-attachments/assets/d4c8a1d7-3725-488c-bed5-7efd7e7195cc" />
+
+
 
 
 4C — Trip Distance
 <img width="555" height="251" alt="graph_visualiser-1791497294897" src="https://github.com/user-attachments/assets/118e2a1c-9120-49ef-9eb9-d06a7bc3fbc2" />
 
+
+
 4D — Trip Duration
 <img width="555" height="251" alt="graph_visualiser-1791497511608" src="https://github.com/user-attachments/assets/7d63a8d4-b6b5-49a9-9739-c7985ae60698" />
 
+
+
 4E — Peak Period × Surge
 <img width="555" height="251" alt="graph_visualiser-1791497807745" src="https://github.com/user-attachments/assets/1929ebcc-62e7-4be6-b601-8ea30f075f84" />
+
+
 
 
 4F — Correlation
