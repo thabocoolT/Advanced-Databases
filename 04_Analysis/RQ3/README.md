@@ -3,7 +3,7 @@
 ## Research Question
 
 Which ride category provides drivers with the highest average payout and the
-most favourable payout to fare ratio?
+most favorable payout to fare ratio?
 
 ## Purpose and method
 
@@ -33,7 +33,7 @@ It includes:
    average fare, both payout to fare measures, average commission, distance,
    and duration. Window `RANK()` functions rank categories by average payout,
    average trip ratio, and weighted ratio.
-2. A `HAVING` clause with a scalar subquery to identify categories whose mean
+2. A `HAVING` clause with a scalar sub-query to identify categories whose mean
    trip payout is above the overall completed-trip average.
 
 The queries use `NULLIF` to guard division, and apply the completed-trip and
@@ -61,8 +61,12 @@ Another important observation was that the average total fare was relatively sim
 
 Overall, the results indicate that Standard performs slightly better when considering average driver payout and trip volume, while Budget performs slightly better when considering the weighted payout-to-fare percentage. But the differences between the two is small and it does not indicate any major financial advantage of one category over the others.
 
-## Conclusion and implications
+## Conclusion
 
 In conclusion, the results show that the Standard (UberX/Bolt) category provides the highest average driver payout and the highest number of completed trips. However, the differences between driver payouts and payout-to-fare percentages across all four ride categories are relatively small. Therefore, the analysis suggests that ride category has only a limited to small effect on driver payout, with Standard showing a slight advantage in overall driver earnings and trip volume.
 
 ## Visualization
+
+[View Excel Results](RQ3_SQL_RESULT_1.xlsx)
+
+[View Excel Results](RQ3_SQL_RESULTS_2.xlsx)
