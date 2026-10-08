@@ -12,7 +12,7 @@ The payout-to-fare ratios were nearly the same in the categories. The highest av
 
 Overall, standard category had a higher average driver payout and trip volume, while Budget was equally strong on the weighted payout to fare ratio. However, the differences are very small, suggesting that ride category has limited influence on driver payout.
 
-**Conclusion: ** Standard (UberX/Bolt) has the highest average driver payout and completed-trip volume, but there is no significant financial difference between the four categories. Drivers earn roughly the same percentage of the fare no matter what category the ride falls into.
+**Conclusion:** Standard (UberX/Bolt) has the highest average driver payout and completed-trip volume, but there is no significant financial difference between the four categories. Drivers earn roughly the same percentage of the fare no matter what category the ride falls into.
 
 ### RQ4:
 
