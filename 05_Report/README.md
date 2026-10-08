@@ -1,4 +1,14 @@
-### RQ1:
+### RQ1: Average Total Fare, Platform Commission, and Driver Payout by Platform Affiliation
+
+The analysis looked at Uber, Bolt, and Dual-Platform (Both) drivers to see which affiliation gives the highest average total fare, platform commission, and driver payout. We only included completed trips with valid fare breakdowns.
+
+Bolt had the highest average total fare at R467.13 followed by Uber at R461.90 and Dual-Platform at R459.89. Bolt also had the highest average driver payout at R377.56, followed by Dual-Platform at R362.92 and Uber at R351.25. Uber had the highest completed-trip volume with 11,667 trips, followed by Dual-Platform with 10,983 and Bolt with 10,681 trips.
+
+The platform commissions differed significantly. Uber retained the highest average commission at R110.65, followed by Dual-Platform at R96.97 and Bolt with the lowest at R89.57.
+
+Overall, Bolt had a higher average total fare and higher driver payout despite having the lowest trip volume, while Uber had the highest commission and lowest driver payout. Dual-Platform was in the middle for all metrics.
+
+Conclusion: Bolt offers the most favorable per-trip earnings for drivers with the highest average payout (R377.56) due to lower commission, while Uber offers the lowest payout (R351.25) due to higher commission. Platform affiliation has a direct impact on driver earnings, with Bolt being most profitable per trip in this dataset.
 
 ### RQ2:
 
