@@ -53,32 +53,38 @@ The analysis shows that **trip distance, duration and surge pricing are importan
 ## Visualisation
 
 4A — Peak vs Off-Peak
-<img width="555" height="171" alt="graph_visualiser-1791496895274" src="https://github.com/user-attachments/assets/5a0a5def-73a4-47df-ba29-0f10f1147cb0" />
+<img width="2000" height="1000" alt="4A_peak_vs_offpeak" src="https://github.com/user-attachments/assets/4cdb7dc7-94b8-451e-9308-269a9edff56a" />
+
 
 
 
 4B — Surge Pricing
-<img width="555" height="251" alt="graph_visualiser-1791497092563" src="https://github.com/user-attachments/assets/d4c8a1d7-3725-488c-bed5-7efd7e7195cc" />
+
+<img width="2200" height="1080" alt="4B_surge_pricing" src="https://github.com/user-attachments/assets/6d39ccaf-2522-4216-a1a4-ddf8e58eeaf8" />
 
 
 
 
 4C — Trip Distance
-<img width="555" height="251" alt="graph_visualiser-1791497294897" src="https://github.com/user-attachments/assets/118e2a1c-9120-49ef-9eb9-d06a7bc3fbc2" />
+<img width="2200" height="1040" alt="4C_trip_distance" src="https://github.com/user-attachments/assets/8530e8e2-455e-48dd-9831-ed6ca1cda866" />
+
 
 
 
 4D — Trip Duration
-<img width="555" height="251" alt="graph_visualiser-1791497511608" src="https://github.com/user-attachments/assets/7d63a8d4-b6b5-49a9-9739-c7985ae60698" />
+<img width="2200" height="1040" alt="4D_trip_duration" src="https://github.com/user-attachments/assets/25441bff-56c5-4193-ac19-c769e7d00eb9" />
 
 
 
 4E — Peak Period × Surge
-<img width="555" height="251" alt="graph_visualiser-1791497807745" src="https://github.com/user-attachments/assets/1929ebcc-62e7-4be6-b601-8ea30f075f84" />
+
+<img width="2800" height="1120" alt="4E_peak_x_surge" src="https://github.com/user-attachments/assets/df7e2378-48dd-4332-8781-1dadd3ab1fc1" />
 
 
 
 
 4F — Correlation
-<img width="1183" height="291" alt="graph_visualiser-1791496556727" src="https://github.com/user-attachments/assets/d270b55e-e9e4-4e40-b4cc-226e80eaf5eb" />
+<img width="1800" height="919" alt="4F_correlation" src="https://github.com/user-attachments/assets/da30b57b-1c38-44b7-807c-a46cbb230202" />
+
+
 
