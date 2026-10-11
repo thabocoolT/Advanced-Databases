@@ -10,7 +10,23 @@ Overall, Bolt had a higher average total fare and higher driver payout despite h
 
 Conclusion: Bolt offers the most favorable per-trip earnings for drivers with the highest average payout (R377.56) due to lower commission, while Uber offers the lowest payout (R351.25) due to higher commission. Platform affiliation has a direct impact on driver earnings, with Bolt being most profitable per trip in this dataset.
 
-### RQ2:
+### RQ2: Platform Commission and Driver Fare Retention
+
+This research question examined how platform commission percentages affect the share of the fare retained by drivers. The analysis compared completed trips across Uber, Bolt and Dual-Platform drivers.
+
+| Platform affiliation | Commission rate | Retained share of commissionable fare | Retained share of total fare |
+| -------------------- | --------------: | ------------------------------------: | ---------------------------: |
+| Bolt                 |             20% |                                86.02% |                       81.16% |
+| Dual-Platform (Both) |             22% |                                84.02% |                       79.28% |
+| Uber                 |             25% |                                81.05% |                       76.46% |
+
+The results show that a higher commission percentage is associated with a lower share of the commissionable fare retained by drivers. Bolt drivers retained the highest share at 86.02%, while Uber drivers retained the lowest at 81.05%. This is a difference of 4.97 percentage points.
+
+Tips were excluded from the commissionable fare because the project's method treats them as money passed directly to drivers. When retention is calculated using the total fare, including tips, the percentages are lower.
+
+### Conclusion:
+
+Bolt drivers retained the highest share of the commissionable fare, while Uber drivers retained the lowest. The results show a clear relationship between the recorded commission rate and driver fare retention in this dataset. However, this comparison does not measure all factors affecting drivers' overall income.
 
 ### RQ3: Driver Payout and Payout-to-Fare Ratio by Ride Category
 
@@ -26,7 +42,7 @@ Overall, standard category had a higher average driver payout and trip volume, w
 
 ### RQ4:
 
- How Do Trip Distance, Duration, Peak Periods and Surge Pricing Affect Driver Payouts?
+How Do Trip Distance, Duration, Peak Periods and Surge Pricing Affect Driver Payouts?
 
 ## 4.1 Introduction
 
@@ -38,14 +54,14 @@ The analysis uses completed trips from the `trip_headers` and `trip_fare_breakdo
 
 The first analysis compares driver payouts during peak and off-peak periods. Peak periods were defined as 06:00–08:59 and 16:00–18:59, while trips outside these periods were classified as off-peak.
 
-| Measure | Off-Peak | Peak |
-|---|---:|---:|
-| Completed trips | 25,056 | 8,275 |
-| Average distance (km) | 24.62 | 24.91 |
-| Average duration (minutes) | 75.8 | 76.3 |
-| Average surge multiplier | 1.13 | 1.71 |
-| Average driver payout | R324.33 | R482.20 |
-| Average payout per hour | R269.05 | R395.86 |
+| Measure                    | Off-Peak |    Peak |
+| -------------------------- | -------: | ------: |
+| Completed trips            |   25,056 |   8,275 |
+| Average distance (km)      |    24.62 |   24.91 |
+| Average duration (minutes) |     75.8 |    76.3 |
+| Average surge multiplier   |     1.13 |    1.71 |
+| Average driver payout      |  R324.33 | R482.20 |
+| Average payout per hour    |  R269.05 | R395.86 |
 
 The results show that the average driver payout during peak periods was R482.20, compared with R324.33 during off-peak periods. This represents a difference of R157.87 per trip. The average payout per hour was also higher during peak periods, at R395.86 compared with R269.05 off-peak.
 
@@ -55,12 +71,12 @@ The average trip distance and duration were relatively similar between the two p
 
 The second analysis groups completed trips according to their surge multiplier. Trips were classified into four categories: no surge, low surge, medium surge and high surge.
 
-| Surge category | Completed trips | Average fare | Average driver payout | Average payout per hour |
-|---|---:|---:|---:|---:|
-| No Surge | 22,393 | R366.40 | R288.64 | R240.17 |
-| Low (1.01–1.49) | 1,498 | R496.74 | R389.43 | R319.50 |
-| Medium (1.50–1.99) | 5,045 | R615.48 | R482.14 | R391.84 |
-| High (2.00+) | 4,395 | R767.97 | R600.10 | R496.79 |
+| Surge category     | Completed trips | Average fare | Average driver payout | Average payout per hour |
+| ------------------ | --------------: | -----------: | --------------------: | ----------------------: |
+| No Surge           |          22,393 |      R366.40 |               R288.64 |                 R240.17 |
+| Low (1.01–1.49)    |           1,498 |      R496.74 |               R389.43 |                 R319.50 |
+| Medium (1.50–1.99) |           5,045 |      R615.48 |               R482.14 |                 R391.84 |
+| High (2.00+)       |           4,395 |      R767.97 |               R600.10 |                 R496.79 |
 
 The findings show a consistent increase in average driver payout as the surge multiplier increases. Trips without surge pricing had an average payout of R288.64, while trips in the high-surge category had an average payout of R600.10. The difference was R311.46 per trip.
 
@@ -72,12 +88,12 @@ However, the results should be interpreted with care because trips in different 
 
 The third analysis investigates the relationship between trip distance and driver payouts. Completed trips were grouped into four distance categories.
 
-| Distance category | Completed trips | Average driver payout | Average payout per km | Average payout per hour |
-|---|---:|---:|---:|---:|
-| Short (<5 km) | 2,554 | R93.84 | R30.94 | R358.07 |
-| Medium (5–14.99 km) | 7,113 | R179.33 | R18.48 | R313.04 |
-| Long (15–29.99 km) | 10,837 | R338.03 | R15.08 | R295.12 |
-| Very Long (30+ km) | 12,827 | R540.90 | R13.92 | R286.70 |
+| Distance category   | Completed trips | Average driver payout | Average payout per km | Average payout per hour |
+| ------------------- | --------------: | --------------------: | --------------------: | ----------------------: |
+| Short (<5 km)       |           2,554 |                R93.84 |                R30.94 |                 R358.07 |
+| Medium (5–14.99 km) |           7,113 |               R179.33 |                R18.48 |                 R313.04 |
+| Long (15–29.99 km)  |          10,837 |               R338.03 |                R15.08 |                 R295.12 |
+| Very Long (30+ km)  |          12,827 |               R540.90 |                R13.92 |                 R286.70 |
 
 The results demonstrate that average driver payout increases as trip distance increases. Short trips generated an average payout of R93.84, whereas very long trips generated an average payout of R540.90.
 
@@ -89,12 +105,12 @@ These findings indicate that longer trips generally provide higher total payouts
 
 The fourth analysis examines how trip duration relates to driver payouts. Trips were divided into quick, standard, extended and long-duration categories.
 
-| Duration category | Completed trips | Average driver payout | Average payout per hour |
-|---|---:|---:|---:|
-| Quick (<15 minutes) | 914 | R83.20 | R451.44 |
-| Standard (15–29 minutes) | 3,827 | R122.28 | R331.27 |
-| Extended (30–59 minutes) | 7,947 | R226.60 | R306.94 |
-| Long (60+ minutes) | 20,643 | R473.37 | R285.68 |
+| Duration category        | Completed trips | Average driver payout | Average payout per hour |
+| ------------------------ | --------------: | --------------------: | ----------------------: |
+| Quick (<15 minutes)      |             914 |                R83.20 |                 R451.44 |
+| Standard (15–29 minutes) |           3,827 |               R122.28 |                 R331.27 |
+| Extended (30–59 minutes) |           7,947 |               R226.60 |                 R306.94 |
+| Long (60+ minutes)       |          20,643 |               R473.37 |                 R285.68 |
 
 The results show that average total payout increased with trip duration. Quick trips generated an average payout of R83.20, while trips lasting 60 minutes or longer generated an average payout of R473.37.
 
@@ -106,16 +122,16 @@ This suggests that although longer trips generally produce higher total payouts,
 
 The fifth analysis combines peak-period classification with surge categories to examine whether the relationship between surge pricing and driver payouts differs between peak and off-peak periods.
 
-| Period | Surge category | Completed trips | Average driver payout | Average payout per hour |
-|---|---|---:|---:|---:|
-| Off-Peak | No Surge | 21,071 | R288.13 | R240.15 |
-| Off-Peak | Low Surge | 527 | R381.15 | R317.48 |
-| Off-Peak | Medium Surge | 1,853 | R475.86 | R390.78 |
-| Off-Peak | High Surge | 1,605 | R605.92 | R492.00 |
-| Peak | No Surge | 1,322 | R296.62 | R240.52 |
-| Peak | Low Surge | 971 | R393.93 | R320.59 |
-| Peak | Medium Surge | 3,192 | R485.79 | R392.45 |
-| Peak | High Surge | 2,790 | R596.76 | R499.55 |
+| Period   | Surge category | Completed trips | Average driver payout | Average payout per hour |
+| -------- | -------------- | --------------: | --------------------: | ----------------------: |
+| Off-Peak | No Surge       |          21,071 |               R288.13 |                 R240.15 |
+| Off-Peak | Low Surge      |             527 |               R381.15 |                 R317.48 |
+| Off-Peak | Medium Surge   |           1,853 |               R475.86 |                 R390.78 |
+| Off-Peak | High Surge     |           1,605 |               R605.92 |                 R492.00 |
+| Peak     | No Surge       |           1,322 |               R296.62 |                 R240.52 |
+| Peak     | Low Surge      |             971 |               R393.93 |                 R320.59 |
+| Peak     | Medium Surge   |           3,192 |               R485.79 |                 R392.45 |
+| Peak     | High Surge     |           2,790 |               R596.76 |                 R499.55 |
 
 The combined analysis shows that average driver payouts increased as the surge category increased during both peak and off-peak periods. For example, off-peak average payouts rose from R288.13 for trips without surge pricing to R605.92 for high-surge trips. During peak periods, average payouts increased from R296.62 to R596.76 across the same categories.
 
@@ -127,12 +143,12 @@ These differences suggest that both peak-period classification and surge pricing
 
 The final analysis measures the correlation between selected trip factors and driver payouts. Correlation coefficients range from -1 to +1. Values closer to +1 indicate a stronger positive relationship, while values close to zero indicate a weak linear relationship.
 
-| Factor | Correlation with driver payout |
-|---|---:|
-| Trip distance | 0.754 |
-| Trip duration | 0.735 |
-| Surge multiplier | 0.527 |
-| Tip amount | 0.074 |
+| Factor           | Correlation with driver payout |
+| ---------------- | -----------------------------: |
+| Trip distance    |                          0.754 |
+| Trip duration    |                          0.735 |
+| Surge multiplier |                          0.527 |
+| Tip amount       |                          0.074 |
 
 Trip distance had the strongest positive correlation with driver payout, with a coefficient of 0.754. Trip duration also had a strong positive correlation of 0.735. These findings support the earlier results showing that longer and more distant trips tend to have higher total payouts.
 
@@ -152,8 +168,17 @@ Overall, the results suggest that drivers should not evaluate trips using total 
 
 The research question is therefore answered by showing that higher distance, longer duration and higher surge multipliers are associated with higher total driver payouts, while peak periods are associated with higher average payouts in the dataset. These relationships should be interpreted as descriptive findings rather than proof of causation.
 
+### RQ5: Highest-Paying City and Ride-Category Combination
 
-### RQ5:
+This research question compared completed trips by operating city and ride category to identify which combination produced the highest average driver payout per trip. Combinations with fewer than 30 completed trips were excluded from the analysis.
+
+Cape Town – Budget (Uber Go/Bolt Go) recorded the highest average payout per completed trip at **R456.41**, based on 1,297 trips. However, Cape Town – Large Capacity recorded the highest payout per kilometre at **R20.71** and the highest payout per hour at **R375.86**.
+
+The results show that the operating city had a stronger influence on average payout than the ride category in this dataset. Cape Town combinations occupied the top four positions in the average-payout ranking. Differences between ride categories within the same city were relatively small.
+
+The best ride category also depended on the measure used. A category with the highest total payout per trip did not always have the highest payout per kilometre or per hour.
+
+**Conclusion:** Cape Town – Budget produced the highest average payout per completed trip, while Cape Town – Large Capacity performed best in payout per kilometre and per hour. Drivers should consider both operating location and earnings efficiency when comparing ride categories.
 
 ### RQ6: Driver Net Earnings Per Hour After Estimated Fuel Costs
 

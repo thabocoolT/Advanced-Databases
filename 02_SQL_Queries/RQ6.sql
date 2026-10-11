@@ -7,7 +7,7 @@ SELECT
 FROM trip_headers
 GROUP BY trip_status
 ORDER BY trip_status;
-===========================================================================
+-- ===========================================================================
 
 
 -- Query 2: Vehicle validation
@@ -18,7 +18,7 @@ SELECT
 FROM vehicles
 GROUP BY make, model
 ORDER BY make, model;
-===========================================================================
+-- ===========================================================================
 -- Query 3: Overall RQ6 calculation
 WITH vehicle_fuel_rates AS (
     SELECT 'BMW' AS make, '3 Series' AS model, 6.5::NUMERIC AS litres_per_100km
@@ -192,7 +192,7 @@ SELECT
         ELSE 'BELOW BENCHMARK'
     END AS benchmark_result
 FROM completed_trips;
-===========================================================================
+-- ===========================================================================
 -- RQ6 Query 4: Vehicle Model Comparison
 
 WITH vehicle_fuel_rates AS (
@@ -397,7 +397,7 @@ GROUP BY
 
 ORDER BY
     net_earnings_per_hour DESC;
-===========================================================================
+-- ===========================================================================
 -- Query 5: City comparison
 WITH vehicle_fuel_rates AS (
     SELECT
