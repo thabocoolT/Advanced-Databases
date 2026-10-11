@@ -399,106 +399,110 @@ ORDER BY
     net_earnings_per_hour DESC;
 -- ===========================================================================
 -- Query 5: City comparison
+
+-- RQ6 Query 5: City comparison using monthly fuel prices
+
 WITH vehicle_fuel_rates AS (
-    SELECT
-        make,
-        model,
-        CASE
-            WHEN make = 'BMW' AND model = '3 Series' THEN 6.5
-            WHEN make = 'Hyundai' AND model = 'Grand i10' THEN 5.5
-            WHEN make = 'Kia' AND model = 'Picanto' THEN 5.1
-            WHEN make = 'Nissan' AND model = 'Almera' THEN 6.3
-            WHEN make = 'Renault' AND model = 'Triber' THEN 5.5
-            WHEN make = 'Suzuki' AND model = 'Ertiga' THEN 5.5
-            WHEN make = 'Toyota' AND model = 'Avanza' THEN 7.6
-            WHEN make = 'Toyota' AND model = 'Corolla Quest' THEN 6.3
-            WHEN make = 'Volkswagen' AND model = 'Polo Vivo' THEN 5.9
-        END AS litres_per_100km
-    FROM vehicles
-    GROUP BY make, model
+    SELECT *
+    FROM (VALUES
+        ('BMW', '3 Series', 6.5::NUMERIC),
+        ('Hyundai', 'Grand i10', 5.5::NUMERIC),
+        ('Kia', 'Picanto', 5.1::NUMERIC),
+        ('Nissan', 'Almera', 6.3::NUMERIC),
+        ('Renault', 'Triber', 5.5::NUMERIC),
+        ('Suzuki', 'Ertiga', 5.5::NUMERIC),
+        ('Toyota', 'Avanza', 7.6::NUMERIC),
+        ('Toyota', 'Corolla Quest', 6.3::NUMERIC),
+        ('Volkswagen', 'Polo Vivo', 5.9::NUMERIC)
+    ) AS rates(make, model, litres_per_100km)
+),
+
+fuel_prices AS (
+    SELECT *
+    FROM (VALUES
+        (2025, 3, 22.34::NUMERIC, 21.55::NUMERIC),
+        (2025, 4, 21.62, 20.79),
+        (2025, 5, 21.40, 20.57),
+        (2025, 6, 21.35, 20.52),
+        (2025, 7, 21.87, 21.04),
+        (2025, 8, 21.59, 20.76),
+        (2025, 9, 21.55, 20.72),
+        (2025, 10, 21.63, 20.80),
+        (2025, 11, 21.63, 20.80),
+        (2025, 12, 21.63, 20.80),
+        (2026, 1, 20.75, 19.92),
+        (2026, 2, 20.10, 19.27),
+        (2026, 3, 20.30, 19.47)
+    ) AS prices(trip_year, trip_month, inland_price, coastal_price)
 ),
 
 completed_trips AS (
     SELECT
-        th.trip_id,
-        d.operating_city,
+        sd.operating_city,
         tf.distance_km,
         tf.duration_minutes,
         tf.driver_payout_zar,
         vfr.litres_per_100km,
 
         CASE
-            WHEN d.operating_city IN (
-                'Johannesburg',
-                'Pretoria',
-                'Vanderbijlpark',
-                'Potchefstroom'
+            WHEN sd.operating_city IN (
+                'Cape Town', 'Durban', 'Gqeberha'
             )
-            THEN 22.00
-            ELSE 21.50
+            THEN fp.coastal_price
+            ELSE fp.inland_price
         END AS fuel_price_per_litre
 
     FROM trip_headers th
 
-    JOIN sa_drivers d
-        ON th.driver_id = d.driver_id
+    JOIN sa_drivers sd
+        ON th.driver_id = sd.driver_id
 
     JOIN trip_fare_breakdown tf
         ON th.trip_id = tf.trip_id
 
     JOIN vehicles v
-        ON d.driver_id = v.driver_id
+        ON th.driver_id = v.driver_id
 
     JOIN vehicle_fuel_rates vfr
         ON v.make = vfr.make
-        AND v.model = vfr.model
+       AND v.model = vfr.model
+
+    JOIN fuel_prices fp
+        ON EXTRACT(YEAR FROM th.request_timestamp)::INT = fp.trip_year
+       AND EXTRACT(MONTH FROM th.request_timestamp)::INT = fp.trip_month
 
     WHERE th.trip_status = 'COMPLETED'
+      AND tf.duration_minutes > 0
 )
 
 SELECT
     operating_city,
     COUNT(*) AS completed_trips,
 
-    ROUND(AVG(driver_payout_zar), 2) AS avg_driver_payout,
+    ROUND(AVG(driver_payout_zar), 2)
+        AS avg_driver_payout,
 
-    ROUND(
-        AVG(
-            distance_km *
-            litres_per_100km / 100 *
-            fuel_price_per_litre
-        ),
-        2
-    ) AS avg_fuel_cost,
+    ROUND(AVG(
+        distance_km * litres_per_100km / 100
+        * fuel_price_per_litre
+    ), 2) AS avg_estimated_fuel_cost,
 
-    ROUND(
-        AVG(
-            driver_payout_zar -
-            (
-                distance_km *
-                litres_per_100km / 100 *
-                fuel_price_per_litre
-            )
-        ),
-        2
-    ) AS avg_net_earnings,
+    ROUND(AVG(
+        driver_payout_zar -
+        (distance_km * litres_per_100km / 100
+        * fuel_price_per_litre)
+    ), 2) AS avg_estimated_net_earnings,
 
     ROUND(
         SUM(
             driver_payout_zar -
-            (
-                distance_km *
-                litres_per_100km / 100 *
-                fuel_price_per_litre
-            )
+            (distance_km * litres_per_100km / 100
+            * fuel_price_per_litre)
         )
-        /
-        SUM(duration_minutes / 60.0),
+        / NULLIF(SUM(duration_minutes / 60.0), 0),
         2
-    ) AS net_earnings_per_hour
+    ) AS estimated_net_earnings_per_hour
 
 FROM completed_trips
-
 GROUP BY operating_city
-
-ORDER BY net_earnings_per_hour DESC;
+ORDER BY estimated_net_earnings_per_hour DESC;
