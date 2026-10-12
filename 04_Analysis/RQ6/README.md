@@ -30,18 +30,18 @@ The vehicle fuel-consumption values are model-level assumptions used to estimate
 
 ## Overall Results
 
-The analysis included 33,331 completed trips.
+The time-accurate comparison included 33,331 completed trips across two periods.
 
-| Measure                         |  Result |
-| ------------------------------- | ------: |
-| Completed trips                 |  33,331 |
-| Average driver payout           | R363.53 |
-| Average estimated fuel cost     |  R31.27 |
-| Average estimated net earnings  | R332.26 |
-| Estimated net earnings per hour | R262.52 |
-| Minimum-wage benchmark          |  R30.23 |
+| Measure                                 | March 2025 – February 2026 | March 2026 |
+| --------------------------------------- | -------------------------: | ---------: |
+| Completed trips                         |                     30,623 |      2,708 |
+| Average driver payout                   |                    R363.71 |    R361.44 |
+| Average estimated fuel cost             |                     R31.51 |     R29.57 |
+| Average estimated net earnings per trip |                    R332.20 |    R331.87 |
+| Estimated net earnings per hour         |                    R262.44 |    R262.56 |
+| Minimum-wage benchmark                  |                     R28.79 |     R30.23 |
 
-The estimated average driver net earnings were **R262.52 per hour**, which is above the R30.23 benchmark.
+For both periods, estimated net earnings per hour exceeded the selected hourly benchmark. These figures represent estimated earnings after fuel costs, not total profit or proof of legal minimum-wage compliance.
 
 ## City Results
 
@@ -50,7 +50,7 @@ The estimated average driver net earnings were **R262.52 per hour**, which is ab
 | Cape Town      |              R417.77 |                         R333.27 |
 | Johannesburg   |              R376.41 |                         R295.62 |
 | Durban         |              R353.23 |                         R278.29 |
-| Pretoria       |              R325.04 |                         R255.46 |
+| Pretoria       |              R3mn 25.04 |                         R255.46 |
 | Gqeberha       |              R294.68 |                         R233.51 |
 | Vanderbijlpark |              R291.10 |                         R227.83 |
 | Potchefstroom  |              R273.58 |                         R218.09 |

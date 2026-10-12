@@ -28,7 +28,7 @@ fuel_prices AS (
         (2025, 8, 21.59, 20.76),
         (2025, 9, 21.55, 20.72),
         (2025, 10, 21.63, 20.80),
-        (2025, 11, 21.63, 20.80),
+        (2025, 11, 21.12, 20.29),
         (2025, 12, 21.63, 20.80),
         (2026, 1, 20.75, 19.92),
         (2026, 2, 20.10, 19.27),
@@ -650,3 +650,41 @@ SELECT
 FROM completed_trips
 GROUP BY operating_city
 ORDER BY estimated_net_earnings_per_hour DESC;
+
+
+-- RQ6 validation A: Does any driver have multiple vehicle records?
+SELECT
+    driver_id,
+    COUNT(*) AS vehicle_count,
+    STRING_AGG(
+        make || ' ' || model || ' (' || year::TEXT || ')',
+        ', '
+    ) AS vehicles
+FROM vehicles
+GROUP BY driver_id
+HAVING COUNT(*) > 1
+ORDER BY vehicle_count DESC, driver_id;
+
+
+-- RQ6 validation B: Find models not covered by the current assumptions.
+WITH fuel_rates(make, model) AS (
+    VALUES
+        ('BMW', '3 Series'),
+        ('Hyundai', 'Grand i10'),
+        ('Kia', 'Picanto'),
+        ('Nissan', 'Almera'),
+        ('Renault', 'Triber'),
+        ('Suzuki', 'Ertiga'),
+        ('Toyota', 'Avanza'),
+        ('Toyota', 'Corolla Quest'),
+        ('Volkswagen', 'Polo Vivo')
+)
+SELECT DISTINCT
+    v.make,
+    v.model
+FROM vehicles AS v
+LEFT JOIN fuel_rates AS r
+    ON r.make = v.make
+   AND r.model = v.model
+WHERE r.make IS NULL
+ORDER BY v.make, v.model;
