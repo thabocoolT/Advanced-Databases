@@ -12,21 +12,21 @@ Conclusion: Bolt offers the most favorable per-trip earnings for drivers with th
 
 ### RQ2: Platform Commission and Driver Fare Retention
 
-This research question examined how platform commission percentages affect the share of the fare retained by drivers. The analysis compared completed trips across Uber, Bolt and Dual-Platform drivers.
+This research question examined how platform commission rates relate to the share of trip fares retained by drivers on Bolt, Dual-Platform and Uber. The analysis used completed trips with valid fare information and compared retention based on both total fare and commissionable fare.
 
-| Platform affiliation | Commission rate | Retained share of commissionable fare | Retained share of total fare |
-| -------------------- | --------------: | ------------------------------------: | ---------------------------: |
-| Bolt                 |             20% |                                86.02% |                       81.16% |
-| Dual-Platform (Both) |             22% |                                84.02% |                       79.28% |
-| Uber                 |             25% |                                81.05% |                       76.46% |
+| Platform affiliation | Commission rate | Completed trips | Average retention of total fare | Average retention of commissionable fare |
+| -------------------- | --------------: | --------------: | ------------------------------: | ---------------------------------------: |
+| Bolt                 |             20% |          10,681 |                          81.16% |                                   80.20% |
+| Dual-Platform (Both) |             22% |          10,983 |                          79.28% |                                   78.22% |
+| Uber                 |             25% |          11,667 |                          76.46% |                                   75.26% |
 
-The results show that a higher commission percentage is associated with a lower share of the commissionable fare retained by drivers. Bolt drivers retained the highest share at 86.02%, while Uber drivers retained the lowest at 81.05%. This is a difference of 4.97 percentage points.
+Bolt recorded the highest average retention of commissionable fare at 80.20%, while Uber recorded the lowest at 75.26%. This represents a difference of 4.94 percentage points. The total-fare retention results show a similar pattern, with Bolt at 81.16% and Uber at 76.46%.
 
-Tips were excluded from the commissionable fare because the project's method treats them as money passed directly to drivers. When retention is calculated using the total fare, including tips, the percentages are lower.
+Commissionable-fare retention excludes tips from both the payout and fare, while total-fare retention includes the full recorded payout and fare. The two measures therefore describe different aspects of driver fare retention.
 
 ### Conclusion:
 
-Bolt drivers retained the highest share of the commissionable fare, while Uber drivers retained the lowest. The results show a clear relationship between the recorded commission rate and driver fare retention in this dataset. However, this comparison does not measure all factors affecting drivers' overall income.
+In this dataset, Bolt drivers retained the highest average share of commissionable fare, while Uber drivers retained the lowest. The results show an association between recorded platform commission rates and driver fare retention, but other factors may also affect the amounts drivers receive.
 
 ### RQ3: Driver Payout and Payout-to-Fare Ratio by Ride Category
 
