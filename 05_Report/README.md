@@ -182,14 +182,56 @@ The best ride category also depended on the measure used. A category with the hi
 
 ### RQ6: Driver Net Earnings Per Hour After Estimated Fuel Costs
 
-This analysis examined whether estimated driver net earnings per hour meet the selected South African national minimum-wage benchmarks. Only completed trips were included. Estimated fuel costs were deducted from driver payouts using vehicle model fuel-consumption assumptions and monthly Petrol 95 prices based on the trip date and operating region.
+This analysis examined whether estimated driver net earnings per hour after fuel costs exceeded the selected South African national minimum-wage benchmarks. Only completed trips with valid positive trip durations were included. Fuel costs were estimated using each driver's recorded vehicle model, assumed model-level fuel consumption, trip distance, and the monthly Petrol 95 price applicable to the trip date and operating region.
 
-A total of 33,331 completed trips were analysed. From March 2025 to February 2026, the average driver payout was R363.71, the average estimated fuel cost was R31.51, and average estimated net earnings were R332.20 per completed trip. Estimated net earnings were R262.44 per hour, above the benchmark of R28.79 per hour.
+The validation checks confirmed that the RQ6 estimates include all 33,331 completed trip headers. The 800 drivers with vehicle records each had exactly one vehicle record, and the validation query returned no rows for multiple vehicle records or unsupported vehicle fuel-rate assumptions.
 
-For March 2026, the average driver payout was R361.44, the average estimated fuel cost was R29.57, and average estimated net earnings were R331.87 per completed trip. Estimated net earnings were R262.56 per hour, above the benchmark of R30.23 per hour.
+#### Overall period comparison
 
-The city comparison showed that Cape Town recorded the highest estimated net earnings per hour at R333.21, followed by Johannesburg at R295.55 and Durban at R278.22. Potchefstroom recorded the lowest at R218.02 per hour. All seven cities exceeded the selected R30.23-per-hour benchmark when used as a common reference for the city comparison.
+| Measure                                            | March 2025 – February 2026 |                 March 2026 |
+| -------------------------------------------------- | -------------------------: | -------------------------: |
+| Completed trips                                    |                     30,623 |                      2,708 |
+| Average driver payout per trip                     |                    R363.71 |                    R361.44 |
+| Average estimated fuel cost per trip               |                     R31.42 |                     R29.57 |
+| Average estimated net earnings after fuel per trip |                    R332.29 |                    R331.87 |
+| Estimated net earnings after fuel per hour         |                    R262.51 |                    R262.56 |
+| Hourly benchmark                                   |                     R28.79 |                     R30.23 |
+| Result                                             | Meets or exceeds benchmark | Meets or exceeds benchmark |
 
-These results suggest that estimated earnings after fuel costs were above the selected hourly benchmarks. However, these figures are estimates rather than actual profit because costs such as maintenance, insurance, depreciation, tyres and vehicle financing were not included. The analysis also uses recorded trip duration, which may not include time spent waiting for passengers or between trips. Therefore, the results should not be treated as proof of legal minimum-wage compliance.
+For March 2025 to February 2026, estimated net earnings after fuel were R262.51 per hour, above the selected benchmark of R28.79. In March 2026, the estimated rate was R262.56 per hour, above the R30.23 benchmark. These figures are based on recorded trip duration and estimated fuel costs.
 
-**Figure:** Estimated Driver Net Earnings Per Hour by City Compared with the R30.23 Benchmark.
+#### Comparison by city
+
+| Operating city | Completed trips | Average driver payout | Average estimated fuel cost | Average estimated net earnings after fuel | Estimated net earnings after fuel per hour |
+| -------------- | --------------: | --------------------: | --------------------------: | ----------------------------------------: | -----------------------------------------: |
+| Cape Town      |           5,126 |               R448.00 |                      R30.23 |                                   R417.77 |                                    R333.27 |
+| Johannesburg   |           4,107 |               R408.13 |                      R31.71 |                                   R376.41 |                                    R295.62 |
+| Durban         |           4,671 |               R384.23 |                      R31.01 |                                   R353.23 |                                    R278.29 |
+| Pretoria       |           4,651 |               R356.85 |                      R31.81 |                                   R325.04 |                                    R255.46 |
+| Gqeberha       |           4,597 |               R324.93 |                      R30.25 |                                   R294.68 |                                    R233.51 |
+| Vanderbijlpark |           4,908 |               R323.33 |                      R32.24 |                                   R291.10 |                                    R227.83 |
+| Potchefstroom  |           5,271 |               R305.24 |                      R31.66 |                                   R273.58 |                                    R218.09 |
+
+Cape Town recorded the highest estimated net earnings after fuel per hour at R333.27, followed by Johannesburg at R295.62 and Durban at R278.29. Potchefstroom recorded the lowest at R218.09 per hour. All seven cities were above the selected R30.23-per-hour benchmark when it is used as a common reference for this comparison.
+
+#### Comparison by vehicle model
+
+| Make and model       | Completed trips | Average driver payout | Average estimated fuel cost | Average estimated net earnings after fuel | Estimated net earnings after fuel per hour |
+| -------------------- | --------------: | --------------------: | --------------------------: | ----------------------------------------: | -----------------------------------------: |
+| Hyundai Grand i10    |           3,381 |               R367.83 |                      R27.92 |                                   R339.91 |                                    R273.03 |
+| Volkswagen Polo Vivo |           3,656 |               R366.77 |                      R30.10 |                                   R336.67 |                                    R268.70 |
+| Renault Triber       |           4,170 |               R367.17 |                      R28.99 |                                   R338.18 |                                    R263.13 |
+| Nissan Almera        |           3,332 |               R363.04 |                      R32.46 |                                   R330.58 |                                    R262.38 |
+| Kia Picanto          |           3,519 |               R361.24 |                      R26.61 |                                   R334.63 |                                    R262.12 |
+| Suzuki Ertiga        |           3,472 |               R357.76 |                      R28.44 |                                   R329.32 |                                    R260.93 |
+| Toyota Corolla Quest |           3,849 |               R368.13 |                      R33.33 |                                   R334.80 |                                    R259.38 |
+| BMW 3 Series         |           3,943 |               R355.73 |                      R33.11 |                                   R322.62 |                                    R258.72 |
+| Toyota Avanza        |           4,009 |               R363.79 |                      R39.28 |                                   R324.51 |                                    R256.16 |
+
+The Hyundai Grand i10 had the highest estimated net earnings after fuel per hour at R273.03, while the Toyota Avanza had the lowest at R256.16. The Avanza also had the highest average estimated fuel cost per trip at R39.28. These are descriptive comparisons and do not show that vehicle model alone caused the differences.
+
+#### Conclusion and limitations
+
+The results answer RQ6 positively for the estimated measure used: both period-level hourly estimates and all city and vehicle-model estimates exceeded the selected R30.23-per-hour reference. The results should nevertheless be interpreted as **estimated net earnings after fuel costs**, not actual profit or take-home pay. The calculation does not deduct maintenance, insurance, depreciation, tyres, financing or other operating costs, and recorded trip duration does not include waiting time or time between trips. Fuel consumption is based on model-level assumptions rather than measured consumption for each trip. Therefore, the analysis is descriptive and is not proof of legal minimum-wage compliance.
+
+**Suggested figure:** Estimated Driver Net Earnings After Fuel Per Hour by City, with a horizontal R30.23 benchmark line.
