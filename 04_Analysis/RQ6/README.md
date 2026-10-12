@@ -50,7 +50,7 @@ For both periods, estimated net earnings per hour exceeded the selected hourly b
 | Cape Town      |              R417.77 |                         R333.27 |
 | Johannesburg   |              R376.41 |                         R295.62 |
 | Durban         |              R353.23 |                         R278.29 |
-| Pretoria       |              R3mn 25.04 |                         R255.46 |
+| Pretoria       |              R325.04 |                         R255.46 |
 | Gqeberha       |              R294.68 |                         R233.51 |
 | Vanderbijlpark |              R291.10 |                         R227.83 |
 | Potchefstroom  |              R273.58 |                         R218.09 |
