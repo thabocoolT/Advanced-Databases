@@ -1,5 +1,149 @@
 -- RQ6: Estimated Net Earnings After Fuel Costs
 
+-- RQ6: Time-accurate minimum-wage benchmark comparison
+
+WITH vehicle_fuel_rates AS (
+    SELECT *
+    FROM (VALUES
+        ('BMW', '3 Series', 6.5::NUMERIC),
+        ('Hyundai', 'Grand i10', 5.5::NUMERIC),
+        ('Kia', 'Picanto', 5.1::NUMERIC),
+        ('Nissan', 'Almera', 6.3::NUMERIC),
+        ('Renault', 'Triber', 5.5::NUMERIC),
+        ('Suzuki', 'Ertiga', 5.5::NUMERIC),
+        ('Toyota', 'Avanza', 7.6::NUMERIC),
+        ('Toyota', 'Corolla Quest', 6.3::NUMERIC),
+        ('Volkswagen', 'Polo Vivo', 5.9::NUMERIC)
+    ) AS rates(make, model, litres_per_100km)
+),
+
+fuel_prices AS (
+    SELECT *
+    FROM (VALUES
+        (2025, 3, 22.34::NUMERIC, 21.55::NUMERIC),
+        (2025, 4, 21.62, 20.79),
+        (2025, 5, 21.40, 20.57),
+        (2025, 6, 21.35, 20.52),
+        (2025, 7, 21.87, 21.04),
+        (2025, 8, 21.59, 20.76),
+        (2025, 9, 21.55, 20.72),
+        (2025, 10, 21.63, 20.80),
+        (2025, 11, 21.63, 20.80),
+        (2025, 12, 21.63, 20.80),
+        (2026, 1, 20.75, 19.92),
+        (2026, 2, 20.10, 19.27),
+        (2026, 3, 20.30, 19.47)
+    ) AS prices(trip_year, trip_month, inland_price, coastal_price)
+),
+
+completed_trips AS (
+    SELECT
+        th.trip_id,
+        th.request_timestamp,
+        tf.driver_payout_zar,
+        tf.distance_km,
+        tf.duration_minutes,
+        vfr.litres_per_100km,
+
+        CASE
+            WHEN sd.operating_city IN (
+                'Cape Town', 'Durban', 'Gqeberha'
+            )
+            THEN fp.coastal_price
+            ELSE fp.inland_price
+        END AS fuel_price_per_litre,
+
+        CASE
+            WHEN th.request_timestamp < TIMESTAMP '2026-03-01'
+            THEN 28.79
+            ELSE 30.23
+        END AS minimum_wage_benchmark
+
+    FROM trip_headers th
+
+    JOIN sa_drivers sd
+        ON th.driver_id = sd.driver_id
+
+    JOIN trip_fare_breakdown tf
+        ON th.trip_id = tf.trip_id
+
+    JOIN vehicles v
+        ON th.driver_id = v.driver_id
+
+    JOIN vehicle_fuel_rates vfr
+        ON v.make = vfr.make
+       AND v.model = vfr.model
+
+    JOIN fuel_prices fp
+        ON EXTRACT(YEAR FROM th.request_timestamp)::INT = fp.trip_year
+       AND EXTRACT(MONTH FROM th.request_timestamp)::INT = fp.trip_month
+
+    WHERE th.trip_status = 'COMPLETED'
+      AND tf.duration_minutes > 0
+),
+
+trip_estimates AS (
+    SELECT
+        *,
+        driver_payout_zar -
+        (
+            distance_km
+            * litres_per_100km / 100
+            * fuel_price_per_litre
+        ) AS estimated_net_earnings
+    FROM completed_trips
+)
+
+SELECT
+    CASE
+        WHEN request_timestamp < TIMESTAMP '2026-03-01'
+        THEN 'March 2025 - February 2026'
+        ELSE 'March 2026'
+    END AS period,
+
+    COUNT(*) AS completed_trips,
+
+    ROUND(AVG(driver_payout_zar), 2)
+        AS avg_driver_payout,
+
+    ROUND(AVG(
+        distance_km * litres_per_100km / 100
+        * fuel_price_per_litre
+    ), 2) AS avg_estimated_fuel_cost,
+
+    ROUND(AVG(estimated_net_earnings), 2)
+        AS avg_estimated_net_earnings,
+
+    ROUND(
+        SUM(estimated_net_earnings)
+        / NULLIF(SUM(duration_minutes / 60.0), 0),
+        2
+    ) AS estimated_net_earnings_per_hour,
+
+    minimum_wage_benchmark,
+
+    CASE
+        WHEN
+            SUM(estimated_net_earnings)
+            / NULLIF(SUM(duration_minutes / 60.0), 0)
+            >= minimum_wage_benchmark
+        THEN 'MEETS OR EXCEEDS BENCHMARK'
+        ELSE 'BELOW BENCHMARK'
+    END AS benchmark_result
+
+FROM trip_estimates
+
+GROUP BY
+    CASE
+        WHEN request_timestamp < TIMESTAMP '2026-03-01'
+        THEN 'March 2025 - February 2026'
+        ELSE 'March 2026'
+    END,
+    minimum_wage_benchmark
+
+ORDER BY MIN(request_timestamp);
+-- ===========================================================================
+
 -- Query 1: Completed trip validation
 SELECT
     trip_status,

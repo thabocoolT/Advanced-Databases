@@ -182,12 +182,14 @@ The best ride category also depended on the measure used. A category with the hi
 
 ### RQ6: Driver Net Earnings Per Hour After Estimated Fuel Costs
 
-This analysis examined whether estimated driver net earnings per hour meet the South African national minimum-wage benchmark of R30.23 per hour. Only completed trips were included. Estimated fuel costs were deducted from driver payouts using vehicle model fuel-consumption assumptions and monthly Petrol 95 prices based on the trip date and operating region.
+This analysis examined whether estimated driver net earnings per hour meet the selected South African national minimum-wage benchmarks. Only completed trips were included. Estimated fuel costs were deducted from driver payouts using vehicle model fuel-consumption assumptions and monthly Petrol 95 prices based on the trip date and operating region.
 
-A total of 33,331 completed trips were analysed. The average driver payout was R363.53, while the average estimated fuel cost was R31.27. This resulted in average estimated net earnings of R332.26 per completed trip and estimated net earnings of **R262.52 per hour**.
+A total of 33,331 completed trips were analysed. From March 2025 to February 2026, the average driver payout was R363.71, the average estimated fuel cost was R31.51, and average estimated net earnings were R332.20 per completed trip. Estimated net earnings were R262.44 per hour, above the benchmark of R28.79 per hour.
 
-All seven cities exceeded the R30.23 benchmark. Cape Town recorded the highest estimated net earnings per hour at **R333.27**, followed by Johannesburg at **R295.62** and Durban at **R278.29**. Potchefstroom recorded the lowest at **R218.09**, but still remained well above the benchmark.
+For March 2026, the average driver payout was R361.44, the average estimated fuel cost was R29.57, and average estimated net earnings were R331.87 per completed trip. Estimated net earnings were R262.56 per hour, above the benchmark of R30.23 per hour.
 
-These results suggest that, after estimated fuel costs, drivers in the dataset earn above the selected minimum-wage benchmark. However, the results represent estimated net earnings rather than actual profit because costs such as maintenance, insurance, depreciation, tyres and vehicle financing were not included.
+The city comparison showed that Cape Town recorded the highest estimated net earnings per hour at R333.21, followed by Johannesburg at R295.55 and Durban at R278.22. Potchefstroom recorded the lowest at R218.02 per hour. All seven cities exceeded the selected R30.23-per-hour benchmark when used as a common reference for the city comparison.
 
-**Figure:** Estimated Driver Net Earnings Per Hour by City compared with the R30.23 minimum-wage benchmark.
+These results suggest that estimated earnings after fuel costs were above the selected hourly benchmarks. However, these figures are estimates rather than actual profit because costs such as maintenance, insurance, depreciation, tyres and vehicle financing were not included. The analysis also uses recorded trip duration, which may not include time spent waiting for passengers or between trips. Therefore, the results should not be treated as proof of legal minimum-wage compliance.
+
+**Figure:** Estimated Driver Net Earnings Per Hour by City Compared with the R30.23 Benchmark.
