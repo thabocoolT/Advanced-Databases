@@ -228,7 +228,7 @@ completed_trips AS (
 
             WHEN EXTRACT(YEAR FROM th.request_timestamp) = 2025
              AND sd.operating_city NOT IN ('Cape Town', 'Durban', 'Gqeberha')
-             AND EXTRACT(MONTH FROM th.request_timestamp) = 11 THEN 21.63
+             AND EXTRACT(MONTH FROM th.request_timestamp) = 11 THEN 21.12
 
             WHEN EXTRACT(YEAR FROM th.request_timestamp) = 2025
              AND sd.operating_city NOT IN ('Cape Town', 'Durban', 'Gqeberha')
@@ -269,7 +269,7 @@ completed_trips AS (
 
             WHEN EXTRACT(YEAR FROM th.request_timestamp) = 2025
              AND sd.operating_city IN ('Cape Town', 'Durban', 'Gqeberha')
-             AND EXTRACT(MONTH FROM th.request_timestamp) = 11 THEN 20.80
+             AND EXTRACT(MONTH FROM th.request_timestamp) = 11 THEN 20.29
 
             WHEN EXTRACT(YEAR FROM th.request_timestamp) = 2025
              AND sd.operating_city IN ('Cape Town', 'Durban', 'Gqeberha')
